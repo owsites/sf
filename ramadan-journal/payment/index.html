@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="robots" content="noindex">
+    <title>Payment Transaction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://res.cloudinary.com/dn4n3lljr/raw/upload/v1708380993/brushtheory/style_rtmklx.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .qr-code {
+            width: 100%; /* Make image responsive */
+            max-width: 300px; /* Maximum size of the QR code image */
+            margin: 20px auto; /* Center the image */
+        }
+        @media (max-width: 768px) {
+            /* Adjustments for smaller screens */
+            .container {
+                padding: 0 15px;
+            }
+            .qr-code {
+                max-width: 80%; /* Larger percentage for smaller screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container text-center">
+    <h4 class="lustria-regular">Ramadan Planner 2024</h4>
+    <h6 class="lustria-regular">From Brush Theory</h6>
+    <img src="https://res.cloudinary.com/dn4n3lljr/image/upload/v1708379595/brushtheory/7313_610746138322_hxfukk.png" alt="qr-code" class="qr-code">
+    <br>
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Awaiting payment confirmation...</span>
+    </div>
+    <p>Awaiting payment confirmation, payment to be completed within <span style="color: darkred;" id="countdown">09:00</span>.</p>
+    <button class="btn btn-success mt-3" onclick="confirmPayment()">Click here if you have completed payment</button>
+    <br>
+    <br>
+    <div class="text-center mt-3">
+    <i class="fas fa-lock" style="color: #FDCC0D;"></i> Secure Payments Powered by 
+<i class="fa-brands fa-google-pay fa-2xl"></i>
+</div>
+
+
+</div>
+
+<footer class="footer mt-5 py-3 bg-light">
+  <div class="container text-center">
+    <a href="https://shehnazfathima.com/docs/shipping-policy.html" class="mx-2">Shipping Policy</a>
+    <a href="https://shehnazfathima.com/docs/privacy.html" class="mx-2">Privacy Policy</a>
+    <a href="https://shehnazfathima.com/customer-care/" class="mx-2">Customer Support</a>
+  </div>
+   <p style="font-size: .5em">&copy; 2024 Brush Theory by Shehnaz Fathima. All rights reserved.</p>
+</footer>
+
+<script>
+function confirmPayment() {
+    window.location.href = 'https://shehnazfathima.com/ramadan-journal/payment/transaction-confirmation';
+}
+
+// Countdown timer for payment
+function startCountdown(duration, display) {
+    var timer = duration, minutes, seconds;
+    var end = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            clearInterval(end);
+            // Optionally notify the user that time is up
+            alert("Payment time has expired. Please try again.");
+            // Redirect or handle expiration
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 9,
+        display = document.querySelector('#countdown');
+    startCountdown(fiveMinutes, display);
+};
+</script>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
