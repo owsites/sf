@@ -36,8 +36,7 @@
 
     </style>
 </head>
-<body onload="setTimeout('upi://pay?pa=brushtheory@upi&pn=Brush Theory by Shehnaz Fathima&am=999&tn=Ramadan Planner 2024&cu=INR',2000)">
-    <body>
+<body onload="triggerUPI()">
 <div class="container text-center">
     <h4 class="lustria-regular">Ramadan Planner 2024</h4>
     <h6 class="lustria-regular">From Brush Theory</h6>
@@ -67,6 +66,16 @@
   </div>
    
 </footer>
+
+<script>
+function triggerUPI() {
+    setTimeout(function() {
+        window.location.href = 'upi://pay?pa=brushtheory@upi&pn=Brush Theory by Shehnaz Fathima&am=999&tn=Ramadan Planner 2024&cu=INR';
+    }, 1000);
+}
+
+// Your existing JavaScript code for confirmPayment() and startCountdown()
+</script>
 
 <script>
 function confirmPayment() {
