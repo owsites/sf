@@ -69,12 +69,8 @@
 
 <script>
 function triggerUPI() {
-    setTimeout(function() {
-        window.location.href = 'upi://pay?pa=brushtheory@upi&pn=Brush Theory by Shehnaz Fathima&am=999&tn=Ramadan Planner 2024&cu=INR';
-    }, 1000);
+    window.location.href = 'upi://pay?pa=brushtheory@upi&pn=Brush Theory by Shehnaz Fathima&am=999&tn=Ramadan Planner 2024&cu=INR';
 }
-
-// Your existing JavaScript code for confirmPayment() and startCountdown()
 </script>
 
 <script>
@@ -104,6 +100,7 @@ function startCountdown(duration, display) {
 }
 
 window.onload = function () {
+    triggerUPI();
     var fiveMinutes = 60 * 9,
         display = document.querySelector('#countdown');
     startCountdown(fiveMinutes, display);
