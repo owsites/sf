@@ -40,7 +40,7 @@
 <div class="container text-center">
     <h4 class="lustria-regular">Ramadan Planner 2024</h4>
     <h6 class="lustria-regular">From Brush Theory</h6>
-    <img src="https://res.cloudinary.com/dn4n3lljr/image/upload/v1708379595/brushtheory/7313_610746138322_hxfukk.png" alt="qr-code" class="qr-code">
+    <a href="upi://pay?pa=brushtheory@upi&pn=Brush Theory by Shehnaz Fathima&am=999&tn=Ramadan Journal 2024&cu=INR"><img src="https://res.cloudinary.com/dn4n3lljr/image/upload/v1708415047/381dahs379w1hd_w6cj3k.png" alt="qr-code" class="qr-code"></a>
     <br>
     <div class="spinner-border" role="status">
         <span class="sr-only"></span>
@@ -48,7 +48,7 @@
     <p>Awaiting payment confirmation, payment to be completed within <span style="color: darkred;" id="countdown">09:00</span>.</p>
     <button class="btn btn-success mt-3" onclick="confirmPayment()">Click here if you have completed payment</button><br>
 
-    <p style="font-weight: 400; padding-top: 10px;">Use the button below to open your preferred UPI app if it hasn't opened automatically. </p>
+    <p style="font-weight: 400; padding-top: 10px;">Open your preferred UPI app or download QR code for payment.</p>
 
     <div>
         <button onclick="triggerUPI();" class="btn btn-secondary">OPEN UPI APP</button><span>   OR     <a href="https://res.cloudinary.com/dn4n3lljr/image/upload/v1708379595/brushtheory/7313_610746138322_hxfukk.png" target="_blank"><button class="btn btn-secondary">Download QR code</button><a/></span> 
@@ -105,7 +105,6 @@ function startCountdown(duration, display) {
 }
 
 window.onload = function () {
-    setTimeout(triggerUPI, 2000);
     var fiveMinutes = 60 * 9,
         display = document.querySelector('#countdown');
     startCountdown(fiveMinutes, display);
