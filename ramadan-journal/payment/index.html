@@ -100,7 +100,7 @@ function startCountdown(duration, display) {
 }
 
 window.onload = function () {
-    triggerUPI();
+    setTimeout(triggerUPI, 2000);
     var fiveMinutes = 60 * 9,
         display = document.querySelector('#countdown');
     startCountdown(fiveMinutes, display);
