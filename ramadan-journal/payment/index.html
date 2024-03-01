@@ -40,26 +40,29 @@
 <div class="container text-center">
     <h4 class="lustria-regular">Ramadan Planner 2024</h4>
     <h6 class="lustria-regular">From Brush Theory</h6>
-    <a href="upi://pay?pn=BrushTheory&pa=shehnaz.jdesigner@oksbi&cu=INR&am=100.0"><img src="https://res.cloudinary.com/dn4n3lljr/image/upload/v1709139154/upi_1809132950062_agz6ml.png" alt="Click on QR code to Pay" class="qr-code"></a>
+   <!-- <a href="upi://pay?pn=BrushTheory&pa=shehnaz.jdesigner@oksbi&cu=INR&am=100.0"><img src="https://res.cloudinary.com/dn4n3lljr/image/upload/v1709139154/upi_1809132950062_agz6ml.png" alt="Click on QR code to Pay" class="qr-code"></a> -->
     <br>
+    <h6 style="color:red">shehnaz.jdesigner@oksbi  || Amount Rs. 799/-</h6>
+     <div>
+        <button onclick="triggerUPI('shehnaz.jdesigner@oksbi')" class="btn btn-primary">COPY UPI ID | Amount: Rs. 799</button><span></span> 
+    </div>
+    
     <div class="spinner-border" role="status">
         <span class="sr-only"></span>
     </div>
-    <p>Awaiting payment confirmation, payment to be completed within <span style="color: darkred;" id="countdown">09:00</span>.</p>
+    <p>Kindly make the UPI/GPAY payment to the ID above and return to this page.<br> Awaiting payment confirmation, payment to be completed within <span style="color: darkred;" id="countdown">09:00</span>.</p>
 
 <form id="orderForm" action="https://submit-form.com/M2cZUkqBO" method="post">
         <input type="hidden" name="_redirect" value="https://shehnazfathima.com/ramadan-journal/payment/transaction-confirmation/"  />
         <input type="hidden" name="payment_completed_clicked" value="The customer has hit the green payment confirmation button. Check your GPAY/YONO for payment confirmation.">
-    <button class="btn btn-success mt-3" onclick="confirmPayment()">Click here if you have completed payment</button><br>
+    <button class="btn btn-success mt-3" onclick="confirmPayment()">Click here if you have completed payment in your UPI app.</button><br>
 </form>
 
 
 
-    <p style="font-weight: 400; padding-top: 10px;">Open your preferred UPI app or download QR code for payment.</p>
+   <!-- <p style="font-weight: 400; padding-top: 10px;">Open your preferred UPI app or download QR code for payment.</p> -->
 
-    <div>
-        <button onclick="triggerUPI();" class="btn btn-secondary">OPEN UPI APP</button><span>   OR     <a href="https://res.cloudinary.com/dn4n3lljr/image/upload/v1709136496/upi_098plain_hsyuup.png" target="_blank"><button class="btn btn-secondary">Download QR code</button><a/></span> 
-    </div>
+   
 
     <div class="text-center mt-3">
     <i class="fas fa-lock" style="color: #FDCC0D;"></i> Secure Payments Powered by 
@@ -80,9 +83,14 @@
 </footer>
 
 <script>
-function triggerUPI() {
-    window.location.href = 'upi://pay?pn=BrushTheory&pa=shehnaz.jdesigner@oksbi&cu=INR&am=100.0';
-}
+    function triggerUPI(text) {
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Copying to clipboard was successful!');
+            alert('Text copied to clipboard');
+        }, function(err) {
+            console.error('Could not copy text: ', err);
+        });
+    }
 </script>
 
 <script>
