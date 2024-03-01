@@ -43,14 +43,17 @@
    <!-- <a href="upi://pay?pn=BrushTheory&pa=shehnaz.jdesigner@oksbi&cu=INR&am=100.0"><img src="https://res.cloudinary.com/dn4n3lljr/image/upload/v1709139154/upi_1809132950062_agz6ml.png" alt="Click on QR code to Pay" class="qr-code"></a> -->
     <br>
     <h6 style="color:red">shehnaz.jdesigner@oksbi  || Amount Rs. 799/-</h6>
-     <div>
+    <br> 
+    <div>
         <button onclick="triggerUPI('shehnaz.jdesigner@oksbi')" class="btn btn-primary">COPY UPI ID | Amount: Rs. 799</button><span></span> 
     </div>
     
-    <div class="spinner-border" role="status">
+   
+    <p>Kindly make the UPI/GPAY payment to the ID above and return to this page.<br></p>
+     <div class="spinner-border" role="status">
         <span class="sr-only"></span>
     </div>
-    <p>Kindly make the UPI/GPAY payment to the ID above and return to this page.<br> Awaiting payment confirmation, payment to be completed within <span style="color: darkred;" id="countdown">09:00</span>.</p>
+    <p>Awaiting payment confirmation, payment to be completed within <span style="color: darkred;" id="countdown">09:00</span>.</p>
 
 <form id="orderForm" action="https://submit-form.com/M2cZUkqBO" method="post">
         <input type="hidden" name="_redirect" value="https://shehnazfathima.com/ramadan-journal/payment/transaction-confirmation/"  />
@@ -86,7 +89,7 @@
     function triggerUPI(text) {
         navigator.clipboard.writeText(text).then(function() {
             console.log('Copying to clipboard was successful!');
-            alert('Text copied to clipboard');
+            alert('UPI ID Copied. Now open your UPI ID and please make payment.');
         }, function(err) {
             console.error('Could not copy text: ', err);
         });
